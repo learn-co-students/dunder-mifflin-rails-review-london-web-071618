@@ -6,6 +6,6 @@ Office: <%= @employee.office %><br></br>
 
 <img src="<%= @employee.img_url %>" width="500">
 
-<%= form_tag"/employees/#{@employee.id}/edit", method: "get" do %>
+<%= form_tag edit_employee_path(@employee), method: "get" do %>
   <%= submit_tag "edit" %>
 <% end %>
