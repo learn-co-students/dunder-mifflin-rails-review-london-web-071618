@@ -1,0 +1,11 @@
+<h1> <%= @dog.name %></h1>
+
+<p> <%=@dog.name%> is a <%=@dog.breed%> and is <%= @dog.age %>. </p>
+
+
+Employee(s) associated with this dog:
+<% @dog.employees.each do |employee| %> <br>
+<%= employee.first_name %>
+<% end %> <br>
+
+<%= link_to "Go back to see all the dogs", dogs_path %>
