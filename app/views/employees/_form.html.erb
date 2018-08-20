@@ -1,0 +1,29 @@
+
+<% if @employee.errors.any? %>
+  <div id="error_explanation">
+    <p><%= pluralize(@employee.errors.count, "error") %> prohibited this article from being saved:</p>
+
+    <ul>
+    <% @employee.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+<%= form_for @employee do |f| %>
+<h3>First Name:</h3>
+<%= f.text_field :first_name %>
+<h3>Last Name:</h3>
+<%= f.text_field :last_name %>
+<h3>Alias:</h3>
+<%= f.text_field :alias %>
+<h3>Job Title:</h3>
+<%= f.text_field :title %>
+<h3>Office:</h3>
+<%= f.text_field :office %>
+<h3>Image link:</h3>
+<%= f.text_field :img_url %>
+<h3>Select Dog:</h3>
+<%= f.collection_select :dog_id, Dog.all, :id, :name %><br>
+<%= f.submit %>
+<% end %>
